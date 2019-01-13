@@ -7,8 +7,8 @@
          >
             <v-flex
                xs12
-               md4
-               lg4
+               md12
+               lg12
             >
                <v-text-field label="Name">
                </v-text-field>
