@@ -15,6 +15,14 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"]
-    }
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@nuxtjs",
+      "node_modules/@nuxt",
+      "node_modules/vue/types",
+      "node_modules/vue-meta/types",
+      "node_modules/vue-router/types"
+    ],
   }
 }

@@ -27,7 +27,7 @@ export default {
       `http://${host}:${port}`
   },
   head: {
-    title: "tt1",
+    title: "shop",
     meta: [
       { charset: "utf-8" },
       {
@@ -64,5 +64,7 @@ export default {
     "@nuxtjs/axios",
     "~/modules/typescript.js"
   ],
-  axios: {}
+  axios: {
+      browserBaseURL: 'http://test1.dressyourkid.ru:8080'
+  }
 }
