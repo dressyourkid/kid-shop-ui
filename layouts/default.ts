@@ -10,7 +10,8 @@ export default {
 				 	{ title: 'Обувь', icon: 'question_answer' },
 				  	{ title: 'Шамки', icon: 'question_answer' }
         		],
-        	right: null
+        	    right: null,
+                message: null
       	}
     	}
   	}

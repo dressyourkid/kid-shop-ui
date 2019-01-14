@@ -39,9 +39,10 @@
 						</v-toolbar>
 						<v-list>
 							<v-list-tile
-							v-for="item in items"
-							:key="item.title"
-							@click=""
+                                v-for="item in items"
+                                :key="item.title"
+                                nuxt
+                                to="/products"
 							>
 							<v-list-tile-action>
 								<v-icon >{{  }}</v-icon>
