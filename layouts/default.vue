@@ -15,52 +15,49 @@
     			</v-card-text>
 				<input v-model="message" placeholder=" Search">
 				<v-btn >Search</v-btn>
-				<v-btn href="/login">Registration</v-btn>
+				<v-btn nuxt to="/login">Registration</v-btn>
 			</v-toolbar-items>
 		
 		</v-toolbar>
-      <v-layout
-		row
-		flex-end
-		>
-        	<v-flex
-          xs4
-			 
-        	>
-				  <v-navigation-drawer permanent>
-						<v-toolbar>
-							<v-list>
-							<v-list-tile>
-								<v-list-tile-title class="title" >
-									Application
-								</v-list-tile-title>
-							</v-list-tile>
-							</v-list>
-						</v-toolbar>
-						<v-list>
-							<v-list-tile
-                                v-for="item in items"
-                                :key="item.title"
-                                nuxt
-                                to="/products"
-							>
-							<v-list-tile-action>
-								<v-icon >{{  }}</v-icon>
-							</v-list-tile-action>
+        <v-layout
+            row
+            flex-end
+        >
+            <v-flex xs4 >
+                <v-navigation-drawer permanent>
+                    <v-toolbar>
+                        <v-list>
+                        <v-list-tile>
+                            <v-list-tile-title class="title" >
+                                Application
+                            </v-list-tile-title>
+                        </v-list-tile>
+                        </v-list>
+                    </v-toolbar>
+                    <v-list>
+                        <v-list-tile
+                            v-for="item in items"
+                            :key="item.title"
+                            nuxt
+                            to="/products"
+                        >
+                        <v-list-tile-action>
+                            <v-icon>mdi-edit</v-icon>
+                        </v-list-tile-action>
 
-							<v-list-tile-content>
-								<v-list-tile-title>{{ item.title }}</v-list-tile-title>
-							</v-list-tile-content>
-							</v-list-tile>
-						</v-list>
-					</v-navigation-drawer >
-				</v-flex>
-				<nuxt/>
-      </v-layout>
-   </div>
-	</div>
+                        <v-list-tile-content>
+                            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                        </v-list-tile-content>
+                        </v-list-tile>
+                    </v-list>
+                </v-navigation-drawer >
+            </v-flex>
+            <div class="ma-3">
+                <nuxt/>
+            </div>
+        </v-layout>
+    </div>
 </template>
+
 <script lang="ts" src="./default.ts">
 </script>   
-
-

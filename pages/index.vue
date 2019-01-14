@@ -3,9 +3,7 @@
     <h1 class="header">Nuxt TypeScript Starter</h1>
     <v-btn>Vuetify button</v-btn>
     <div>
-        <login>
-          
-        </login>
+        
     </div>
     <div class="cards">
       <Card
