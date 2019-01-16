@@ -30,5 +30,5 @@ export default class DefaultLayout extends Vue {
 			"name" : "Вещи"
 		} 
 	];
-
 }
+
