@@ -16,6 +16,7 @@
     "vuex-class": "0.3.1"
   },
   "devDependencies": {
+    "@mdi/font": "^3.3.92",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "ts-loader": "5.3.3",
