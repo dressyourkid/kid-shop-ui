@@ -7,8 +7,8 @@ import { Product } from "~/types";
 
 export default class ProductById extends Vue {
     private product: Product = {
-        name: '',
         id: 0,
+        name: '',
         description: '',
         price: 0,
         exists: false
