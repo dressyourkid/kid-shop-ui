@@ -1,7 +1,12 @@
 import { Component,Vue } from "nuxt-property-decorator"
-
-@Component({})
+import LoginModal from '~/components/login/LoginModal'
+@Component({
+	components: {
+		LoginModal,
+	}
+})
 export default class DefaultLayout extends Vue {
+	private test: boolean = false;
 	private title: any = ['Куртки', 'Кофты', 'Штаны', 'Рубашки', 'Обувь', 'Дениски', 'Алешки'];
 	private categories: any[] = [
 		{

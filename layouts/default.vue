@@ -4,27 +4,27 @@
             <v-toolbar class="yellow darken-3">
                 <v-toolbar-title>KidShop</v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-btn             
-                color="primary"
-                dark
-                @click="dialog = true">Registration</v-btn>
+                <v-btn
+                    outline      
+                    @click="test = true"
+                >
+                    Sign in
+                </v-btn>
             </v-toolbar>
             <v-layout row justify-center> 
-                    <v-list>
-                        <v-list-tile
-                            v-for="item in categories"
-                            :key="item.title"
-                            nuxt
-                            to="/products"
-                            style="float: left;"
-                        >
-
-                            <v-list-tile-content>
-                                <nuxt-link :to="'/category/' + item.id">{{item.name}}</nuxt-link>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                    </v-list>
+                <div
+                    v-for="item in categories"
+                    :key="item.title"
+                    nuxt
+                    to="/products"
+                    class="pa-3"
+                >
+                    <div>
+                        <nuxt-link :to="'/category/' + item.id">{{item.name}}</nuxt-link>
+                    </div>
+                </div>
             </v-layout>
+            <login-modal :dialog="test"></login-modal>
             <div class="ma-3">
                 <nuxt/>
             </div>
