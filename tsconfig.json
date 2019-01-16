@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "es2015"],
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "noImplicitAny": false,
@@ -22,7 +22,20 @@
     //   "node_modules/@nuxt",
       "node_modules/vue/types",
     //   "node_modules/vue-meta/types",
-      "node_modules/vue-router/types"
+      "node_modules/vue-router/types",
+      "./typings"
     ],
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+      "index.d.ts"
+  ]
 }
