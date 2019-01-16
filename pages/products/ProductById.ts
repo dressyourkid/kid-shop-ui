@@ -7,11 +7,11 @@ import { Product } from "~/types";
 
 export default class ProductById extends Vue {
     private product: Product = {
-        id: 0,
-        name: '',
-        description: '',
-        price: 0,
-        exists: false
+        id: null,
+        name: null,
+        description: null,
+        price: null,
+        exists: null,
     };
 
     private async created() {
