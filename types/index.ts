@@ -23,3 +23,11 @@ export interface Address {
   state: string;
   street: string;
 }
+
+export interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  exists: boolean;
+}
