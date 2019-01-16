@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </v-layout>
-            <login-modal :dialog="test"></login-modal>
+            <login :dialog="test"></login>
             <div class="ma-3">
                 <nuxt/>
             </div>

@@ -1,8 +1,10 @@
 import { Component,Vue } from "nuxt-property-decorator"
-import LoginModal from '~/components/login/LoginModal'
+//import LoginModal from '~/components/login/Login.vue'
+import Login from '~/components/login/Login.vue';
+
 @Component({
 	components: {
-		LoginModal,
+		Login
 	}
 })
 export default class DefaultLayout extends Vue {

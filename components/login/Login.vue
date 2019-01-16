@@ -22,5 +22,15 @@
    </v-layout>
 </template>
 
-<script lang="ts" src="./LoginModal.ts">
-</script>   
+<script lang="ts">
+import {
+  Component,
+  Prop,
+  Vue
+} from "nuxt-property-decorator"
+ @Component({})
+export default class Login extends Vue {
+   @Prop({ required: true })
+    private dialog: boolean;
+}
+</script>
