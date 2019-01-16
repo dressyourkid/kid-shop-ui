@@ -1,32 +1,31 @@
 <template>
-   <v-form>
-      <v-container>
-         <v-layout 
-            row
-            justify-center
-         >
-            <v-flex
-               xs12
-               md12
-               lg12
+   <v-layout row justify-center>      
+      <v-dialog
+      v-model="dialog"
+      max-width="400"
+      >      
+         <v-card>
+            <div 
+            style="padding: 20px;"
             >
+               <h2 class="text-xs-center">Вход</h2>
                <v-text-field label="Name">
                </v-text-field>
                <v-text-field label="Password">
                </v-text-field>
-               <v-btn color="blue">
-                  VK
-               </v-btn>
-               <v-btn color="blue">
-                  FACEBOOk
-               </v-btn>
-               <v-btn color="green">
-                  ENTER
-               </v-btn>
-            </v-flex>
-         </v-layout>
-      </v-container>
-   </v-form>
+               <v-layout align-center justify-end row>
+                  <v-btn color="green">
+                  Вход
+               </v-btn> 
+
+               </v-layout>
+                    
+            </div>
+         </v-card>
+            
+      </v-dialog>
+   </v-layout>
+
 </template>
 
 <script lang="ts" src="./Login.ts">
