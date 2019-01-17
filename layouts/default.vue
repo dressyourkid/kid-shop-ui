@@ -10,12 +10,6 @@
                 >
                     Sign in
                 </v-btn>
-                <v-btn
-                    outline      
-                    @click="openDialog = true"
-                >
-                    Товары в
-                </v-btn>
             </v-toolbar>
             <v-layout row justify-center> 
                 <div
