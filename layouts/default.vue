@@ -10,11 +10,17 @@
                 >
                     Sign in
                 </v-btn>
+                                <v-btn
+                    outline      
+                    @click="openDialog = true"
+                >
+                    Товары в
+                </v-btn>
             </v-toolbar>
             <v-layout row justify-center> 
                 <div
                     v-for="item in categories"
-                    :key="item.title"
+                    :key="item.id"
                     class="pa-3"
                 >
                     <div>
@@ -23,6 +29,7 @@
                 </div>
             </v-layout>
             <login-modal v-model="openDialog"></login-modal>
+            
             <div class="ma-3">
                 <nuxt/>
             </div>
