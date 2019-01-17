@@ -1,5 +1,6 @@
 <template>
     <section>
+        <carousel></carousel>
         <p>Определится с тем что будет показываться на главной странице</p>  
     </section>
 </template>
