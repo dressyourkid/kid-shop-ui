@@ -14,7 +14,7 @@
             <v-layout row justify-center> 
                 <div
                     v-for="item in categories"
-                    :key="item.title"
+                    :key="item.id"
                     class="pa-3"
                 >
                     <div>
@@ -32,7 +32,3 @@
 
 <script lang="ts" src="./default.ts">
 </script>
-
-
-<style>
-</style>
