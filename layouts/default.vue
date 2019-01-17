@@ -6,7 +6,7 @@
                 <v-spacer></v-spacer>
                 <v-btn
                     outline      
-                    @click="test = true"
+                    @click="openDialog = true"
                 >
                     Sign in
                 </v-btn>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </v-layout>
-            <login :dialog="test"></login>
+            <login-modal v-model="openDialog"></login-modal>
             <div class="ma-3">
                 <nuxt/>
             </div>
