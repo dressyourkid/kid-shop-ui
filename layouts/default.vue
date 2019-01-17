@@ -10,7 +10,7 @@
                 >
                     Sign in
                 </v-btn>
-                                <v-btn
+                <v-btn
                     outline      
                     @click="openDialog = true"
                 >
@@ -29,7 +29,6 @@
                 </div>
             </v-layout>
             <login-modal v-model="openDialog"></login-modal>
-            
             <div class="ma-3">
                 <nuxt/>
             </div>
@@ -39,7 +38,3 @@
 
 <script lang="ts" src="./default.ts">
 </script>
-
-
-<style>
-</style>
