@@ -15,8 +15,6 @@
                 <div
                     v-for="item in categories"
                     :key="item.title"
-                    nuxt
-                    to="/products"
                     class="pa-3"
                 >
                     <div>
