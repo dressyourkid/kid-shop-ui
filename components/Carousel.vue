@@ -32,7 +32,7 @@
                         color="orange"
                         nuxt
                         append
-                        :to="{ path: `${product.id}` }"
+                        :to="{ path:'products/' + `${product.id}` }"
                     >
                         Explore
                     </v-btn>
