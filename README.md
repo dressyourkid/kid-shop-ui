@@ -1,4 +1,6 @@
-# ts-kid-shop-ui
+# Kid shop UI
+
+[![Build Status](https://travis-ci.org/dressyourkid/kid-shop-ui.svg?branch=master)](https://travis-ci.org/dressyourkid/kid-shop-ui)
 
 > Nuxt.js TypeScript project
 
