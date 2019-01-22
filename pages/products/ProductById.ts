@@ -2,7 +2,6 @@ import { Component,Vue } from "nuxt-property-decorator"
 import { Product } from "~/types";
 
 @Component({})
-
 export default class ProductById extends Vue {
     private product: Product = {
         id: null,

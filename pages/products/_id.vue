@@ -22,7 +22,7 @@
             >
                 <div>
                     <h1 class="headline"> {{ product.name }} </h1>
-                    <h1 class="headline"> {{ product.price }} руб.</h1>
+                    <h2 class="headline"> {{ product.price }} руб.</h2>
                     <v-select
                         :items="size"
                         label="Выберите размер"
@@ -31,8 +31,8 @@
                     <v-btn class="mt-5" large>Сделать пиздато</v-btn>
                     <h3 class="mt-5">О товаре</h3>
                     <p>{{ product.description }}</p>
-                    <div>
-                        В наличии: {{ product.exists }}
+                    <div v-if="!product.exists">
+                        Отсутсвует на складе 
                     </div>
                     <div>
                         Страна производства: Russia
