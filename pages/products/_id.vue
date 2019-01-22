@@ -1,13 +1,14 @@
 <template>
     <section>
         <v-layout row wrap>
+            <v-flex xs1 sm1 md1></v-flex>
             <v-flex
                 xs12
-                sm9
-                md9
+                sm7
+                md7
                 class="pr-4"
             >
-                <v-carousel light>
+                <v-carousel height>
                     <v-carousel-item
                         v-for="(item,i) in items"
                         :key="i"
@@ -39,6 +40,7 @@
                     </div>
                 </div>
          </v-flex>
+         <v-flex xs1 sm1 md1></v-flex>
         </v-layout>
     </section>
 </template>

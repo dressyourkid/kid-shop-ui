@@ -11,7 +11,7 @@
                     Sign in
                 </v-btn>
             </v-toolbar>
-            <v-layout row justify-center> 
+            <v-layout row justify-center wrap> 
                 <div
                     v-for="item in categories"
                     :key="item.id"
