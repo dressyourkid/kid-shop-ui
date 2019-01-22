@@ -1,9 +1,7 @@
 import { Component,Vue } from "nuxt-property-decorator"
 import { Product } from "~/types";
 
-
-@Component({
-})
+@Component({})
 
 export default class ProductById extends Vue {
     private product: Product = {
@@ -12,19 +10,25 @@ export default class ProductById extends Vue {
         description: null,
         price: null,
         exists: null,
-    };
+    }
 
     private async created() {
         const fetchProductById = await this.$axios.$get('product/' + this.$route.params.id);
         this.product = fetchProductById;
-    };
+    }
+
     private items: any[] = [
         {
-            src: 'http://picture-cdn.wheretoget.it/6d8ng3-l-610x610-t+shirt-kids+tee-kids+fashion-kids+sweater-kids+swag-kid-graphic+tee-t+shirt+print-sweater-urban-streetwear-beanie-shirt-single-jacket-78-pull-black-swag-dope-white+t+shirt-flowers.jpg'
+            src: 'https://www.apple.com/ac/ac-video-posterframe/1.0/images/ac-video-poster_848x480.jpg'
           },
           {
-            src: 'http://picture-cdn.wheretoget.it/6d8ng3-l-610x610-t+shirt-kids+tee-kids+fashion-kids+sweater-kids+swag-kid-graphic+tee-t+shirt+print-sweater-urban-streetwear-beanie-shirt-single-jacket-78-pull-black-swag-dope-white+t+shirt-flowers.jpg'
+            src: 'https://assets.pcmag.com/media/images/523954-apple-invite.png'
+          },
+          {
+              src: 'http://www.fainaidea.com/wp-content/uploads/2018/12/Oficialno-prezentaciya-Apple-sostoitsya-12-sentyabrya-2.jpg'
           }
-	]
+    ];
+    
+    private size: any[] = ['36','37','38','39','40','41','42','43','44','45'];
 
 }
