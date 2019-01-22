@@ -1,53 +1,42 @@
 <template>
-    <v-carousel hide-delimiters light>
-        <v-carousel-item 
-            v-for="product in products"
-            :key="product.id" >
-                <v-layout row>
-                    <v-flex xs4 :key="j" v-for="j in 5">
-                        <v-card class="ma-4">
-                    <v-img
-                        src="http://picture-cdn.wheretoget.it/6d8ng3-l-610x610-t+shirt-kids+tee-kids+fashion-kids+sweater-kids+swag-kid-graphic+tee-t+shirt+print-sweater-urban-streetwear-beanie-shirt-single-jacket-78-pull-black-swag-dope-white+t+shirt-flowers.jpg"
-                        aspect-ratio="1"
-                    ></v-img>
-
-                    <v-card-title primary-title>
-                    <div>
-                        <h3 class="headline mb-0">
-                            {{ product.name }}
-                        </h3>
-                        <div>{{ product.description }}</div>
-                    </div>
-                    </v-card-title>
-
-                    <v-card-actions>
-                    <v-btn
-                        flat
-                        color="orange"
-                    >
-                        Share
-                    </v-btn>
-                    <v-btn
-                        flat
-                        color="orange"
-                        nuxt
-                        append
-                        :to="{ path:'products/' + `${product.id}` }"
-                    >
-                        Explore
-                    </v-btn>
-                    </v-card-actions>
-                </v-card>
-                    </v-flex>
-                </v-layout>
-        </v-carousel-item>
-    </v-carousel>
+    <div>
+        <swiper :options="swiperOption">
+            <swiper-slide v-for="i in 5" :key="i">
+                <v-img
+                    src="https://assets.pcmag.com/media/images/523954-apple-invite.png"
+                ></v-img>
+            </swiper-slide>
+            <swiper-slide v-for="j in 6" :key="j">
+                <v-img
+                    src="http://www.fainaidea.com/wp-content/uploads/2018/12/Oficialno-prezentaciya-Apple-sostoitsya-12-sentyabrya-2.jpg"
+                ></v-img>
+            </swiper-slide>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
+    </div>
 </template>
 
-<script lang="ts" src="./Carousel.ts">
+<script>
+    export default {
+        data() {
+            return {
+                swiperOption: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    slidesPerGroup: 3,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                }
+            }
+        }
+    }   
 </script>
-<style>
-img {
-  max-width: 100%;
-}
-</style>

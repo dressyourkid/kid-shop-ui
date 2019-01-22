@@ -56,7 +56,7 @@ export default {
   /*
   ** Build configuration
   */
-  plugins: ['~/plugins/vuetify.js'],
+  plugins: ['~/plugins/vuetify.js', {src: '~/plugins/vue-awesome-swiper.js', ssr: false}],
   css: ['~/assets/style/app.styl'],
 //   css: ["~/assets/css/main.css"],
   build: {},
