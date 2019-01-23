@@ -11,7 +11,6 @@ export default class CategoryId extends Vue {
     @Watch('currentPage')
     private watchCurrentPage(val) {
         this.currentPage = val;
-    //    this.$router.push(this.$route.path + '/page/' + this.currentPage);
         this.getPageContent(this.currentPage);
     }
     
@@ -30,6 +29,7 @@ export default class CategoryId extends Vue {
             if (categoryPage) {
                 this.categoryProducts = categoryPage.content;
                 this.numberOfPages = categoryPage.totalPages;
+                this.$router.push({ path: this.$route.path, query: { page: this.currentPage.toString() } });
             }
         } catch (error) {
             console.error(error);
