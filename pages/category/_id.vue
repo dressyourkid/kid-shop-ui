@@ -43,6 +43,14 @@
                 </v-card>
             </v-flex>
         </v-layout>
+        <v-layout justify-center align-center>
+            <v-pagination
+                v-model="currentPage"
+                :length="numberOfPages"
+                :total-visible="5"
+            >
+            </v-pagination>
+        </v-layout>
     </div>
 </template>
 
