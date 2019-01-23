@@ -19,16 +19,14 @@ export default class CategoryId extends Vue {
     }
 
     private mounted() {
-        this.$nextTick(() => {
-            if (this.$route.query.page !== undefined) {
-                const page = parseInt(this.$route.query.page.toString());
-                this.getPageContent(page);
-                this.currentPage = page;
-            }  
-        });
+        if (this.$route.query.page !== undefined) {
+            const page = +this.$route.query.page;
+            this.getPageContent(page);
+            this.currentPage = page;
+        }  
     }
 
-    private async getPageContent(page: any) {
+    private async getPageContent(page: number) {
         try {
             const pageNumber = (page - 1);
             const params = {
