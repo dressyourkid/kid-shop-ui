@@ -18,19 +18,5 @@
     </div>
 </template>
 
-<script>
-    export default {
-        data() {
-            return {
-                swiperOption: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                }
-            }
-        }
-    }   
+<script lang="ts" src="./Carousel.ts">
 </script>
