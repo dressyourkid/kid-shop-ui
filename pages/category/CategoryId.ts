@@ -13,17 +13,22 @@ export default class CategoryId extends Vue {
         this.currentPage = val;
         this.getPageContent(this.currentPage);
     }
-    
-    private created() {
-        this.getPageContent(this.currentPage);
+/*
+    @Watch('$route.query')
+    private watchRoute(query, oldQuery) {
+        if (query !== oldQuery) {
+            this.getPageContent(query.page)
+        }
     }
-
+*/
     private mounted() {
         if (this.$route.query.page !== undefined) {
             const page = +this.$route.query.page;
             this.getPageContent(page);
             this.currentPage = page;
-        }  
+        } else {
+            this.getPageContent(this.currentPage);
+        } 
     }
 
     private async getPageContent(page: number) {
