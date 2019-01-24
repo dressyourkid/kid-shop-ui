@@ -1,38 +1,33 @@
 import { Component, Vue, Watch } from "nuxt-property-decorator"
 
-@Component({
-})
+@Component
 export default class CategoryId extends Vue {
     private categoryProducts: any[] = [];
     private currentPage: number = 1;
     private numberOfPages: number = null;
     private pageSize: number = 9;
 
-    @Watch('currentPage')
-    private watchCurrentPage(val) {
-        this.currentPage = val;
-        this.getPageContent(this.currentPage);
-    }
-/*
     @Watch('$route.query')
     private watchRoute(query, oldQuery) {
-        if (query !== oldQuery) {
-            this.getPageContent(query.page)
+        if (query.page && query.page !== oldQuery.page) {
+            this.fetchPageContent(+query.page);
         }
     }
-*/
+
     private mounted() {
         if (this.$route.query.page !== undefined) {
             const page = +this.$route.query.page;
-            this.getPageContent(page);
-            this.currentPage = page;
+            this.fetchPageContent(page);
         } else {
-            this.getPageContent(this.currentPage);
+            this.$router.replace({ query: { page: this.currentPage.toString() } });
+            this.fetchPageContent(this.currentPage);
         } 
     }
 
-    private async getPageContent(page: number) {
+    private async fetchPageContent(page: number) {
         try {
+            this.currentPage = page;
+            this.$router.push({ path: this.$route.path, query: { page: this.currentPage.toString() } });
             const pageNumber = (page - 1);
             const params = {
                 page: pageNumber,
@@ -42,7 +37,6 @@ export default class CategoryId extends Vue {
             if (categoryPage) {
                 this.categoryProducts = categoryPage.content;
                 this.numberOfPages = categoryPage.totalPages;
-                this.$router.push({ path: this.$route.path, query: { page: this.currentPage.toString() } });
             }
         } catch (error) {
             console.error(error);
