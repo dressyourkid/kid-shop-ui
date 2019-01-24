@@ -45,7 +45,8 @@
         </v-layout>
         <v-layout justify-center align-center>
             <v-pagination
-                v-model="currentPage"
+                :value="currentPage"
+                @input="fetchPageContent"
                 :length="numberOfPages"
                 :total-visible="5"
             >
