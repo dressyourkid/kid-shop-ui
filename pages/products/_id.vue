@@ -8,7 +8,7 @@
                 md7
                 class="pr-4"
             >
-                <v-carousel height>
+                <v-carousel height light>
                     <v-carousel-item
                         v-for="(item,i) in items"
                         :key="i"
