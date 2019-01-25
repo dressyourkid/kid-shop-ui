@@ -7,7 +7,7 @@ import LoginModal from '~/components/login/LoginModal.vue';
 	}
 })
 export default class DefaultLayout extends Vue {
-	private productSearch: string = 'sidr';
+	private productSearch: string = '';
 	private openDialog: boolean = false;
 	private categories: any[] = [];
 
