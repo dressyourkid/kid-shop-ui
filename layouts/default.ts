@@ -17,16 +17,7 @@ export default class DefaultLayout extends Vue {
 	}
 	
 	private async search() {
-		const result = await this.$axios.$get('/product', {
-			params: {
-				search: this.productSearch
-			}
-		})
-		.catch((error) => {
-			throw error;
-		});
-		
-		console.log(result);
+		this.$router.push( {path: '/products', query: {search: this.productSearch}} )
 	}
 }
 
