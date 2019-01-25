@@ -9,9 +9,6 @@ export default class ProductList extends Vue {
      */
     @Prop()
     private category: string;
-
-    @Prop()
-    private search: string;
     
     private content: Product[] = [];
     private currentPage: number = 1;
@@ -39,15 +36,15 @@ export default class ProductList extends Vue {
         try {
             this.currentPage = page;
             if (this.currentPage > 1) {
-                this.$router.push({ query: { page: this.currentPage.toString() } });
+                this.$router.push({ query: { ...this.$route.query, page: this.currentPage.toString() } });
             } else {
-                this.$router.push({ query: {} });
+                this.$router.push({ query: { ...this.$route.query, page: undefined } });
             }
             const pageNumber = (page - 1);
             const params = {
                 page: pageNumber,
                 size: this.pageSize,
-                search: this.search,
+                search: this.$route.query.search,
             };
             const requestUrl = this.category ? `category/${this.category}/product` : 'product';
             const categoryPage = await this.$axios.$get(requestUrl, { params });
