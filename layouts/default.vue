@@ -2,7 +2,12 @@
     <v-app>
         <div>
             <v-toolbar class="yellow darken-3">
-                <v-toolbar-title>KidShop</v-toolbar-title>
+                <nuxt-link to="/">
+                    <v-toolbar-title>
+                        <v-icon>mdi-anchor</v-icon>
+                        KidShop
+                    </v-toolbar-title>
+                </nuxt-link>
                 <v-spacer></v-spacer>
                 <v-btn
                     outline      
