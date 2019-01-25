@@ -17,6 +17,11 @@
                 </v-btn>
             </v-toolbar>
             <v-layout row justify-center wrap> 
+                <div class="pa-3">
+                    <div>
+                        <nuxt-link :to="'/products'">Все товары</nuxt-link>
+                    </div>
+                </div>
                 <div
                     v-for="item in categories"
                     :key="item.id"
