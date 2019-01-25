@@ -3,7 +3,7 @@
         <carousel 
             title="Акции дня"
             btn-label="Смотреть все"
-            categor-id="2001"
+            category-id="2001"
         />
         <carousel 
             title="Косметика для вас"
