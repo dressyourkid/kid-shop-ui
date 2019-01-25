@@ -1,11 +1,16 @@
 <template>
     <section>
         <carousel 
-        title="Акции дня"
-        btnLabel="Смотреть все"
-        categoryId="2001"
+            title="Акции дня"
+            btn-label="Смотреть все"
+            categor-id="2001"
         />
-        <p>Определится с тем что будет показываться на главной странице</p>  
+        <carousel 
+            title="Косметика для вас"
+            btn-label="Подробнее"
+            category-id="2004"
+        />
+        
     </section>
 </template>
 
