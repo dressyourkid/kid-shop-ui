@@ -3,12 +3,12 @@
         <div>
             <v-toolbar class="yellow darken-3">
                 <v-layout align-center justify-space-between row>
-                <nuxt-link to="/">
+                <button @click="clickTuButton">
                     <v-toolbar-title>
                         <v-icon>mdi-anchor</v-icon>
                         KidShop
                     </v-toolbar-title>
-                </nuxt-link>
+                </button>
                 <v-flex xs6>
                     <v-text-field
                         v-model="productSearch"
@@ -16,9 +16,20 @@
                         single-line
                         background-color="white"
                         clearable
-                        append-icon="mdi-search-web"
                         @keyup.enter="search"
-                    />
+                    >
+                    <v-fade-transition slot="append">
+                        <v-btn  
+                            flat 
+                            icon color="indigo"
+                            class="button_search" 
+                            @click="search"
+                        >
+                            <v-icon>mdi-magnify</v-icon>
+                        </v-btn>
+                    </v-fade-transition>
+                    </v-text-field>
+                    
                 </v-flex>
                 <v-btn
                     outline      
@@ -54,3 +65,13 @@
 
 <script lang="ts" src="./default.ts">
 </script>
+
+<style lang="stylus" scoped>
+.button_search {
+    width: 24px; 
+    height: 24px; 
+    padding-left: 0; 
+    margin-top: 0;
+}
+</style>
+

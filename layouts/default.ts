@@ -19,5 +19,8 @@ export default class DefaultLayout extends Vue {
 	private async search() {
 		this.$router.push( {path: '/products', query: {search: this.productSearch}} )
 	}
+	private async clickTuButton() {
+		this.$router.push({path: '/'})
+	}
 }
 
