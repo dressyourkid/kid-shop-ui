@@ -3,40 +3,41 @@
         <div>
             <v-toolbar class="yellow darken-3">
                 <v-layout align-center justify-space-between row>
-                <button @click="clickTuButton">
-                    <v-toolbar-title>
-                        <v-icon>mdi-anchor</v-icon>
-                        KidShop
-                    </v-toolbar-title>
-                </button>
-                <v-flex xs6>
-                    <v-text-field
-                        v-model="productSearch"
-                        label="Search" 
-                        single-line
-                        background-color="white"
-                        clearable
-                        @keyup.enter="search"
-                    >
-                    <v-fade-transition slot="append">
-                        <v-btn  
-                            flat 
-                            icon color="indigo"
-                            class="button_search" 
-                            @click="search"
+                    <button @click="clickToButton">
+                        <v-toolbar-title>
+                            <v-icon>mdi-anchor</v-icon>
+                            KidShop
+                        </v-toolbar-title>
+                    </button>
+                    <v-flex xs6>
+                        <v-text-field
+                            v-model="productSearch"
+                            label="Search" 
+                            single-line
+                            background-color="white"
+                            clearable
+                            @keyup.enter="search"
                         >
-                            <v-icon>mdi-magnify</v-icon>
-                        </v-btn>
-                    </v-fade-transition>
-                    </v-text-field>
-                    
-                </v-flex>
-                <v-btn
-                    outline      
-                    @click="openDialog = true"
-                >
-                    Sign in
-                </v-btn>
+                            <v-fade-transition slot="append">
+                                <v-btn  
+                                    flat 
+                                    icon color="indigo"
+                                    class="button_search" 
+                                    @click="search"
+                                >
+                                    <v-icon>mdi-magnify</v-icon>
+                                </v-btn>
+                            </v-fade-transition>
+                        </v-text-field>
+                        
+                    </v-flex>
+                    <v-btn
+                        outline      
+                        @click="openDialog = true"
+                    >
+                        Sign in
+                    </v-btn>
+                    <shopping-cart-popover></shopping-cart-popover>
                 </v-layout>
             </v-toolbar>
             <v-layout row justify-center wrap> 
