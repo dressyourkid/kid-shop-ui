@@ -1,16 +1,10 @@
 import { Component,Vue, Prop } from "nuxt-property-decorator"
-import { Product, ProductInCart } from "~/types";
+import { ProductInCart } from "~/types";
 
 @Component({})
 export default class ShoppingCartPopover extends Vue {
 
-    private visible: boolean;
-    private msg: number = 1;
 	private products: ProductInCart[] = [];
-	
-	// private get totalPrice() {
- 	// 	return this.mg * this.product.price;
-	// }
 
 	private async mounted() {
         const fetchProductById1 = await this.$axios.$get('product/1671');
@@ -26,6 +20,16 @@ export default class ShoppingCartPopover extends Vue {
     }
 
     private clickToProducts() {
-		this.$router.push({path: '/products'})
-	}
+        this.$router.push({path: '/products'});
+    }
+
+    private check() {
+        this.products.forEach( (item) => {
+            item.amount--;
+            if (item.amount <= 1) {
+                item.amount = 1;
+            }
+        })
+
+    }
 }

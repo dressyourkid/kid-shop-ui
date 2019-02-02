@@ -44,8 +44,7 @@
                 </v-flex>
                 <v-flex xs2 sm2 md2 class="mr-5 mt-4">
                     <div style="display: flex;">
-                        <!-- должна быть доп логика по отключению кнопки когда item.amount === 1 -->
-                        <div style="cursor: pointer;" class="mt-2 mr-2" @click="item.amount--">
+                        <div style="cursor: pointer;" class="mt-2 mr-2" @click="check">
                             <v-icon class="mt-1">mdi-minus</v-icon>
                         </div>
                         <v-text-field

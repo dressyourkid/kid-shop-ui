@@ -3,12 +3,12 @@
         <div>
             <v-toolbar class="yellow darken-3">
                 <v-layout align-center justify-space-between row>
-                    <button @click="clickToButton">
+                    <nuxt-link class="logo" :to="'/'">
                         <v-toolbar-title>
                             <v-icon>mdi-anchor</v-icon>
                             KidShop
                         </v-toolbar-title>
-                    </button>
+                    </nuxt-link>
                     <v-flex xs6>
                         <v-text-field
                             v-model="productSearch"
@@ -40,22 +40,26 @@
                     <shopping-cart-popover></shopping-cart-popover>
                 </v-layout>
             </v-toolbar>
-            <v-layout row justify-center wrap> 
-                <div class="pa-3">
-                    <div>
-                        <nuxt-link :to="'/products'">Все товары</nuxt-link>
-                    </div>
-                </div>
-                <div
+            <v-tabs
+                dark
+                color="teal darken-1"
+                show-arrows
+                centered
+            >  
+                <v-tabs-slider color="yellow"></v-tabs-slider>
+                <v-tab :to="'/products'">
+                    Все товары
+                </v-tab>
+                <v-tab
+                    class="text-md-center"
                     v-for="item in categories"
                     :key="item.id"
-                    class="pa-3"
+                    :to="'/category/' + item.id"
                 >
-                    <div>
-                        <nuxt-link :to="'/category/' + item.id">{{item.name}}</nuxt-link>
-                    </div>
-                </div>
-            </v-layout>
+                    {{item.name}}
+                </v-tab>
+            
+            </v-tabs>
             <login-modal v-model="openDialog"></login-modal>
             <div class="ma-3">
                 <nuxt/>
@@ -68,6 +72,10 @@
 </script>
 
 <style lang="stylus" scoped>
+.logo {
+    text-decoration: none;
+    color: black;
+}
 .button_search {
     width: 24px; 
     height: 24px; 
