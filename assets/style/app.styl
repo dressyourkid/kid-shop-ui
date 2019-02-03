@@ -2,9 +2,9 @@
 // https://vuetifyjs.com/en/style/colors
 @require '~vuetify/src/stylus/settings/_colors'
 $theme := {
-  primary:     $blue.darken-2
+  primary:     $blue.darken-3
   accent:      $blue.accent-2
-  secondary:   $grey.lighten-1
+  secondary:   $teal.darken-1
   info:        $blue.lighten-1
   warning:     $amber.darken-2
   error:       $red.accent-4
@@ -20,3 +20,11 @@ $theme := {
 .logo
   text-decoration none
   color black
+
+.v-card--reveal
+  align-items center
+  justify-content center
+  opacity .7
+  position absolute
+  width 100%
+  height 100%

@@ -1,7 +1,12 @@
 import { Component, Vue, Watch, Prop } from "nuxt-property-decorator"
 import { Product } from '~/types';
+import Card from '~/components/product/Card.vue';
 
-@Component
+@Component({
+    components: {
+        Card
+    }
+})
 export default class ProductList extends Vue {
     
     /**
