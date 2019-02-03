@@ -13,23 +13,21 @@
                         <v-text-field
                             v-model="productSearch"
                             label="Search" 
-                            single-line
-                            background-color="white"
+                            solo
                             clearable
                             @keyup.enter="search"
                         >
                             <v-fade-transition slot="append">
                                 <v-btn  
                                     flat 
-                                    icon color="indigo"
-                                    class="button_search" 
+                                    icon 
+                                    color="primary"
                                     @click="search"
                                 >
                                     <v-icon>mdi-magnify</v-icon>
                                 </v-btn>
                             </v-fade-transition>
                         </v-text-field>
-                        
                     </v-flex>
                     <v-btn
                         outline      
@@ -37,7 +35,7 @@
                     >
                         Sign in
                     </v-btn>
-                    <shopping-cart-popover></shopping-cart-popover>
+                    <shopping-cart-popover/>
                 </v-layout>
             </v-toolbar>
             <v-tabs
@@ -46,7 +44,7 @@
                 show-arrows
                 centered
             >  
-                <v-tabs-slider color="yellow"></v-tabs-slider>
+                <v-tabs-slider color="yellow"/>
                 <v-tab :to="'/products'">
                     Все товары
                 </v-tab>
@@ -58,10 +56,9 @@
                 >
                     {{item.name}}
                 </v-tab>
-            
             </v-tabs>
             <login-modal v-model="openDialog"></login-modal>
-            <div class="ma-3">
+            <div>
                 <nuxt/>
             </div>
         </div>
@@ -70,17 +67,3 @@
 
 <script lang="ts" src="./default.ts">
 </script>
-
-<style lang="stylus" scoped>
-.logo {
-    text-decoration: none;
-    color: black;
-}
-.button_search {
-    width: 24px; 
-    height: 24px; 
-    padding-left: 0; 
-    margin-top: 0;
-}
-</style>
-

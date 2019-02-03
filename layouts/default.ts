@@ -10,9 +10,7 @@ import ShoppingCartPopover from "~/components/baskets/ShoppingCartPopover.vue";
 export default class DefaultLayout extends Vue {
 	private productSearch: string = '';
 	private openDialog: boolean = false;
-	private openMenu: boolean = false;
 	private categories: any[] = [];
-
 
 	private async mounted() {
         const categoriesPage = await this.$axios.$get('category');
@@ -21,9 +19,6 @@ export default class DefaultLayout extends Vue {
 	
 	private search() {
 		this.$router.push( {path: '/products', query: {search: this.productSearch}} )
-	}
-	private clickToButton() {
-		this.$router.push({path: '/'})
 	}
 }
 
