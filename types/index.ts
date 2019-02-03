@@ -31,3 +31,9 @@ export interface Product {
   price: number;
   exists: boolean;
 }
+
+export interface ProductInCart {
+  product: Product;
+  amount: number;
+  totalPrice?: number;
+}

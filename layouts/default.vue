@@ -3,49 +3,62 @@
         <div>
             <v-toolbar class="yellow darken-3">
                 <v-layout align-center justify-space-between row>
-                <nuxt-link to="/">
-                    <v-toolbar-title>
-                        <v-icon>mdi-anchor</v-icon>
-                        KidShop
-                    </v-toolbar-title>
-                </nuxt-link>
-                <v-flex xs6>
-                    <v-text-field
-                        v-model="productSearch"
-                        label="Search" 
-                        single-line
-                        background-color="white"
-                        clearable
-                        append-icon="mdi-search-web"
-                        @keyup.enter="search"
-                    />
-                </v-flex>
-                <v-btn
-                    outline      
-                    @click="openDialog = true"
-                >
-                    Sign in
-                </v-btn>
+                    <nuxt-link class="logo" :to="'/'">
+                        <v-toolbar-title>
+                            <v-icon>mdi-anchor</v-icon>
+                            KidShop
+                        </v-toolbar-title>
+                    </nuxt-link>
+                    <v-flex xs6>
+                        <v-text-field
+                            v-model="productSearch"
+                            label="Search" 
+                            solo
+                            clearable
+                            @keyup.enter="search"
+                        >
+                            <v-fade-transition slot="append">
+                                <v-btn  
+                                    flat 
+                                    icon 
+                                    color="primary"
+                                    @click="search"
+                                >
+                                    <v-icon>mdi-magnify</v-icon>
+                                </v-btn>
+                            </v-fade-transition>
+                        </v-text-field>
+                    </v-flex>
+                    <v-btn
+                        outline      
+                        @click="openDialog = true"
+                    >
+                        Sign in
+                    </v-btn>
+                    <shopping-cart-popover/>
                 </v-layout>
             </v-toolbar>
-            <v-layout row justify-center wrap> 
-                <div class="pa-3">
-                    <div>
-                        <nuxt-link :to="'/products'">Все товары</nuxt-link>
-                    </div>
-                </div>
-                <div
+            <v-tabs
+                dark
+                color="teal darken-1"
+                show-arrows
+                centered
+            >  
+                <v-tabs-slider color="yellow"/>
+                <v-tab :to="'/products'">
+                    Все товары
+                </v-tab>
+                <v-tab
+                    class="text-md-center"
                     v-for="item in categories"
                     :key="item.id"
-                    class="pa-3"
+                    :to="'/category/' + item.id"
                 >
-                    <div>
-                        <nuxt-link :to="'/category/' + item.id">{{item.name}}</nuxt-link>
-                    </div>
-                </div>
-            </v-layout>
+                    {{item.name}}
+                </v-tab>
+            </v-tabs>
             <login-modal v-model="openDialog"></login-modal>
-            <div class="ma-3">
+            <div>
                 <nuxt/>
             </div>
         </div>

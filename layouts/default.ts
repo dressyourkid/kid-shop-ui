@@ -1,9 +1,10 @@
 import { Component,Vue } from "nuxt-property-decorator"
 import LoginModal from '~/components/login/LoginModal.vue';
-
+import ShoppingCartPopover from "~/components/baskets/ShoppingCartPopover.vue";
 @Component({
 	components: {
-		LoginModal
+		LoginModal,
+		ShoppingCartPopover
 	}
 })
 export default class DefaultLayout extends Vue {
@@ -13,10 +14,10 @@ export default class DefaultLayout extends Vue {
 
 	private async mounted() {
         const categoriesPage = await this.$axios.$get('category');
-        this.categories = categoriesPage.content;
+		this.categories = categoriesPage.content;
 	}
 	
-	private async search() {
+	private search() {
 		this.$router.push( {path: '/products', query: {search: this.productSearch}} )
 	}
 }
