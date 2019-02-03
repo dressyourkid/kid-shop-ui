@@ -11,7 +11,7 @@
                     <v-text-field label="Name"></v-text-field>
                     <v-text-field label="Password"></v-text-field>
                     <v-layout row align-center justify-end>
-                        <v-btn color="green">
+                        <v-btn dark color="teal darken-1">
                             Вход
                         </v-btn> 
                     </v-layout> 

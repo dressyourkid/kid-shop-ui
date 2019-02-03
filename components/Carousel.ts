@@ -1,6 +1,11 @@
 import { Component,Vue, Prop } from "nuxt-property-decorator"
+import Card from '~/components/product/Card.vue';
 
-@Component({})
+@Component({
+    components: {
+        Card
+    }
+})
 export default class Carousel extends Vue {
     @Prop({required: true})
     private title: string;
@@ -11,7 +16,7 @@ export default class Carousel extends Vue {
     private categoryProducts: any[] = [];
     
     private swiperOption: any = {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 30,
         navigation: {
             nextEl: '.swiper-button-next',

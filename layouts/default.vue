@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <div>
-            <v-toolbar class="yellow darken-3">
+            <v-toolbar class="primary">
                 <v-layout align-center justify-space-between row>
                     <nuxt-link class="logo" :to="'/'">
                         <v-toolbar-title>
