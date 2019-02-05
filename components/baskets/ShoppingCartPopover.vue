@@ -6,9 +6,9 @@
     >
         <v-btn
             slot="activator"
-            outline 
+            outline
         >
-            <v-icon>mdi-cart</v-icon>
+            <v-icon class="pr-2">fa-cart-plus</v-icon>
             Baskets
         </v-btn>
         <v-card>
@@ -28,7 +28,7 @@
             >
                 <!-- эта кнопка по клику должна удалять этот товар из общего массива products -->
                 <v-btn flat icon color="pink">
-                    <v-icon>mdi-close</v-icon>
+                    <v-icon>fa-times</v-icon>
                 </v-btn>
                 <v-flex xs2 sm2 md2 >
                     <div class="mr-3">
@@ -45,7 +45,7 @@
                 <v-flex xs2 sm2 md2 class="mr-5 mt-4">
                     <div style="display: flex;">
                         <div style="cursor: pointer;" class="mt-2 mr-2" @click="check">
-                            <v-icon class="mt-1">mdi-minus</v-icon>
+                            <v-icon class="mt-1">fa-minus</v-icon>
                         </div>
                         <v-text-field
                             v-model="item.amount"
@@ -55,7 +55,7 @@
                         >
                         </v-text-field>
                         <div style="cursor: pointer;" class="mt-2 ml-2" @click="item.amount++">
-                            <v-icon class="mt-1">mdi-plus</v-icon>
+                            <v-icon class="mt-1">fa-plus</v-icon>
                         </div>
                     </div>
                 </v-flex>

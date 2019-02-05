@@ -1,6 +1,6 @@
 <template>
     <section>
-        <v-carousel hide-delimiters light height>
+        <v-carousel hide-delimiters dark>
             <v-carousel-item
                 v-for="(item,i) in items"
                 :key="i"
