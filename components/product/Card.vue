@@ -27,7 +27,7 @@
                     right
                     top
                 >
-                    <v-icon color="white" >fa-cart-arrow-down</v-icon>
+                    <v-icon color="white">add</v-icon>
                 </v-btn>
             </v-card-text>
             <div class="font-weight-regular grey--text title mb-2">{{ product.name }}</div>
