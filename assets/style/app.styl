@@ -2,14 +2,16 @@
 // https://vuetifyjs.com/en/style/colors
 @require '~vuetify/src/stylus/settings/_colors'
 $theme := {
-  primary:     $blue.darken-3
-  accent:      $blue.accent-2
-  secondary:   $teal.darken-1
-  info:        $blue.lighten-1
-  warning:     $amber.darken-2
-  error:       $red.accent-4
+  primary:     $blue.darken-3,
+  accent:      $blue.accent-2,
+  secondary:   $teal.darken-1,
+  info:        $blue.lighten-1,
+  warning:     $amber.darken-2,
+  error:       $red.accent-4,
   success:     $green.lighten-2
 }
+
+$xyu = $blue.darken-3
 
 // Import Vuetify styling
 @require '~vuetify/src/stylus/main'
@@ -19,7 +21,16 @@ $theme := {
 
 .logo
   text-decoration none
-  color black
+  color white
+
+.layout_toolbar__search
+    min-height 30px
+    height 30px
+    .v-input__control
+        min-height 30px !important
+
+.v-input--is-focused i
+    color $xyu !important
 
 .v-card--reveal
   align-items center

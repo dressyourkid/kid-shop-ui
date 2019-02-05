@@ -6,10 +6,11 @@
     >
         <v-btn
             slot="activator"
-            outline
+            flat
+            small
         >
-            <v-icon class="pr-2">fa-cart-plus</v-icon>
-            Baskets
+            <v-icon class="pr-2">shopping_cart</v-icon>
+            Корзина
         </v-btn>
         <v-card>
             <v-layout 

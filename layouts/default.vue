@@ -2,18 +2,20 @@
     <v-app>
         <div>
             <v-toolbar 
-                color="blue darken-3"
+                color="primary"
                 dark
+                dense
             >
-                <v-layout row>
+                <v-layout row align-center>
                     <v-flex shrink class="mr-3">
                         <nuxt-link class="logo" :to="'/'">
-                            KidShop
-                            LOGO
+                            Интернет магазин
                         </nuxt-link>
                     </v-flex>
                     <v-flex>
                         <v-text-field
+                            class="layout_toolbar__search"
+                            height="20px"
                             v-model="productSearch"
                             clearable
                             flat
@@ -24,22 +26,23 @@
                             <v-fade-transition slot="append">
                                 <v-btn  
                                     flat 
+                                    small
                                     icon 
-                                    light
                                     @click="search"
                                 >
-                                    <v-icon>fa-search</v-icon>
+                                    <v-icon>search</v-icon>
                                 </v-btn>
                             </v-fade-transition>
                         </v-text-field>
                     </v-flex>
                     <v-flex shrink>
                         <v-btn
-                            outline   
+                            flat   
+                            small
                             @click="openDialog = true"
                         >
-                            <v-icon class="pr-2">fa-user-secret</v-icon>
-                            Sign in
+                            <v-icon class="pr-2">people</v-icon>
+                            Вход
                         </v-btn>
                         <shopping-cart-popover/>
                     </v-flex>

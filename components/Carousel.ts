@@ -16,7 +16,6 @@ export default class Carousel extends Vue {
     private categoryProducts: any[] = [];
     
     private get swiperOptions(): any {
-        console.warn('recalculated')
         const options = {
             slidesPerView: 5,
             spaceBetween: 30,

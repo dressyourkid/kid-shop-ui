@@ -65,6 +65,7 @@ export default {
     "~/modules/typescript.js"
   ],
   axios: {
-      browserBaseURL: 'http://test1.dressyourkid.ru:8080'
+    //   baseURL: 'http://test1.dressyourkid.ru:8080',
+      browserBaseURL: process.env.API_URL_BROWSER || 'http://test1.dressyourkid.ru:8080'
   }
 }
