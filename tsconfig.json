@@ -23,6 +23,7 @@
       "node_modules/vue/types",
     //   "node_modules/vue-meta/types",
       "node_modules/vue-router/types",
+      "node_modules/vuetify/types",
       "./typings"
     ],
   },

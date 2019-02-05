@@ -1,10 +1,10 @@
-// import '@mdi/font/css/materialdesignicons.css'
-import '@mdi/font/css/materialdesignicons.css'
+import '@fortawesome/fontawesome-free/css/all.css' // Ensure you are using css-loader
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 
 // Vue.use(Vuetify)
 Vue.use(Vuetify, {
     // https://vuetifyjs.com/en/framework/icons#installing-fonts
-    iconfont: 'mdi' // 'md' || 'mdi' || 'fa' || 'fa4'
+    // iconfont: 'mdi' // 'md' || 'mdi' || 'fa' || 'fa4'
+    iconfont: 'fa'
 })
