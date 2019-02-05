@@ -17,8 +17,8 @@ COPY . /usr/src/app
 RUN echo "--->>> Installing packages" && \
     npm install
 
-# RUN echo "--->>> Building app" && \
-#     npm run build
+RUN echo "--->>> Building app" && \
+    npm run build
 
 EXPOSE 3000
 
