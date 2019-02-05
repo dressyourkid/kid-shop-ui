@@ -2,10 +2,10 @@ language: node_js
 node_js:
   - "node"
 
-before_install:
-    - echo "building Dockerfile..."
-    - docker build -t dressyourkid/kid-shop-ui .
-    - echo "Dockerfile built successfully"
+# before_install:
+#     - echo "building Dockerfile..."
+#     - docker build -t dressyourkid/kid-shop-ui .
+#     - echo "Dockerfile built successfully"
 
 deploy:
     provider: script
