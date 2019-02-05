@@ -14,8 +14,8 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-# RUN echo "--->>> Installing packages" && \
-#     npm install
+RUN echo "--->>> Installing packages" && \
+    npm install
 
 # RUN echo "--->>> Building app" && \
 #     npm run build
