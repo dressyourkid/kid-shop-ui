@@ -8,9 +8,10 @@
             slot="activator"
             flat
             small
+            :icon="$vuetify.breakpoint.smAndDown"
         >
-            <v-icon class="pr-2">shopping_cart</v-icon>
-            Корзина
+            <v-icon>shopping_cart</v-icon>
+            <span class="hidden-sm-and-down pl-2">Корзина</span>
         </v-btn>
         <v-card>
             <v-layout 
