@@ -18,7 +18,9 @@ export const mutations: MutationTree<RootState> = {
 export const actions: ActionTree<RootState, RootState> = {
     async nuxtServerInit({ commit }, { app }) {
         try {
-            const categoriesPage = await app.$axios.$get('http://212.109.194.195/category');
+            console.warn('aza-za-za')
+            const categoriesPage = await app.$axios.$get('http://212.109.194.195:8080/category');
+            console.warn('222222222')
             commit('setCategories', categoriesPage.content);
         } catch (error) {
             console.error(error);
