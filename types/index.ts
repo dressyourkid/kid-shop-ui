@@ -32,6 +32,11 @@ export interface Product {
   exists: boolean;
 }
 
+export interface Category {
+    id: number;
+    name: string;
+}
+
 export interface ProductInCart {
   product: Product;
   amount: number;
