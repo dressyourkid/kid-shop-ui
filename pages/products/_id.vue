@@ -6,7 +6,8 @@
                 xs12
                 sm7
                 md7
-                class="pr-4"
+                pr-4
+                mt-4
             >
                 <v-carousel height light>
                     <v-carousel-item
@@ -20,6 +21,7 @@
                 xs12 
                 sm3
                 md3
+                mt-4
             >
                 <div>
                     <h1 class="headline"> {{ product.name }} </h1>
