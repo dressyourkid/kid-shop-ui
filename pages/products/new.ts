@@ -39,7 +39,24 @@ export default class addProduct extends Vue {
             this.categories.push(item.name); 
         })
     }
+    
 
+    private name: string = "" ;
+    private Description: string = "" ;
+    private Price: string = "" ;
+    private amount: string = "" ;
+    private Category: string = "" ;
+  
+    private clear () {
+        this.name = ''
+        this.Description = ''
+        this.Price = ''
+        this.amount = ''
+        this.Category =''
+        this.imageName = ''
+        this.imageUrl = false
+    }
+       
     
     
 }
