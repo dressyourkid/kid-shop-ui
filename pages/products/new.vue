@@ -11,23 +11,27 @@
             >
                 <div>
                     <v-text-field
+                        v-model="name"
                         box
                         label="Наименование"
                     ></v-text-field>
                     <v-text-field
+                        v-model="description"
                         box
                         label="Описание"
                     ></v-text-field>
                     <v-text-field
+                        v-model="price"
                         box
                         label="Цена"
                     ></v-text-field>
                     <v-text-field
+                        v-model="amount"
                         box
                         label="Количество"
                     ></v-text-field>
 					<div>
-                        <img :src="imageUrl" height="150" v-if="imageUrl"/>
+                        <img :src="imageUrl"  height="150" />
                         <v-text-field label="Select Image" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
                         <input
                             type="file"
@@ -38,12 +42,13 @@
                         />
                     </div>
                     <v-combobox
+                        v-model="category"
                         :items="categories"
                         label="Категория"
                         :menu-props="{openOnClick: false}"
                     ></v-combobox>
                     <v-btn class="mt-5" large @click="saveProduct">Сохранить</v-btn>
-                    <v-btn class="mt-5" large>Очистить</v-btn>
+                    <v-btn class="mt-5 right" @click="clear"  large>Очистить</v-btn>
                 </div>
          </v-flex>
         </v-layout>
