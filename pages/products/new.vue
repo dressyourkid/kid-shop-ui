@@ -16,12 +16,12 @@
                         label="Наименование"
                     ></v-text-field>
                     <v-text-field
-                        v-model="Description"
+                        v-model="description"
                         box
                         label="Описание"
                     ></v-text-field>
                     <v-text-field
-                        v-model="Price"
+                        v-model="price"
                         box
                         label="Цена"
                     ></v-text-field>
@@ -42,7 +42,7 @@
                         />
                     </div>
                     <v-combobox
-                        v-model="Category"
+                        v-model="category"
                         :items="categories"
                         label="Категория"
                         :menu-props="{openOnClick: false}"
