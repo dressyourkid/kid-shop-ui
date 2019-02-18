@@ -6,7 +6,7 @@ export default class Card extends Vue {
     @Prop({required: true})
     private product: Product;
 
-    private addToBucket() {
+    private addToCart() {
         this.$store.commit('addProduct', this.product);
     }
 }
