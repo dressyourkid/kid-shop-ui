@@ -26,6 +26,7 @@
                     large
                     right
                     top
+                    @click="addToBucket"
                 >
                     <v-icon color="white">add</v-icon>
                 </v-btn>

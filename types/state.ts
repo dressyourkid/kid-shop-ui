@@ -1,6 +1,6 @@
-import { Person, Category } from "~/types";
+import { ProductInCart, Category } from "~/types";
 
 export interface RootState {
-  people: Person[];
-  categories: Category[]; 
+  categories: Category[];
+  productsInCart: ProductInCart[];
 }
