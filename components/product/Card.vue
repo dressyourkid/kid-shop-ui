@@ -26,7 +26,7 @@
                     large
                     right
                     top
-                    @click="addToBucket"
+                    @click="addToCart"
                 >
                     <v-icon color="white">add</v-icon>
                 </v-btn>
