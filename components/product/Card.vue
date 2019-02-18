@@ -26,6 +26,7 @@
                     large
                     right
                     top
+                    @click="addToCart"
                 >
                     <v-icon color="white">add</v-icon>
                 </v-btn>

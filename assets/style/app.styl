@@ -11,7 +11,7 @@ $theme := {
   success:     $green.lighten-2
 }
 
-$xyu = $blue.darken-3
+$basic = $blue.darken-3
 
 // Import Vuetify styling
 @require '~vuetify/src/stylus/main'
@@ -23,6 +23,10 @@ $xyu = $blue.darken-3
   text-decoration none
   color white
 
+.cart-link
+  text-decoration none
+  color black
+
 .layout_toolbar__search
     min-height 30px
     height 30px
@@ -30,7 +34,7 @@ $xyu = $blue.darken-3
         min-height 30px !important
 
 .v-input--is-focused i
-    color $xyu !important
+    color $basic !important
 
 .v-card--reveal
   align-items center
