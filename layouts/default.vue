@@ -1,6 +1,6 @@
 <template>
-    <v-app>
-        <div>
+    <v-app v-scroll="onScroll">  
+      <div>
             <v-toolbar
                 color="primary"
                 dark
@@ -84,11 +84,14 @@
                     {{item.name}}
                 </v-tab>
             </v-tabs>
-            <login-modal v-model="openDialog"></login-modal>
+            <login-modal v-model="openDialog"></login-modal>    
             <div>
                 <nuxt />
             </div>
         </div>
+        <v-btn @click="$vuetify.goTo(buttonUp)" v-if="show" fab dark fixed medium bottom floating right color="red"> 
+            <v-icon dark>keyboard_arrow_up</v-icon> 
+        </v-btn>
     </v-app>
 </template>
 
