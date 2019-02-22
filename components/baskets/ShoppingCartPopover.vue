@@ -51,7 +51,7 @@
             <v-divider/>
             <v-layout row>
                 <v-flex>
-                    <v-btn color="teal darken-1" dark>Оформить заказ</v-btn>
+                    <v-btn color="teal darken-1" :to="'/order/new'" dark>Оформить заказ</v-btn>
                 </v-flex>
                 <v-flex shrink >
                     <div>Итого: {{ totalOrderPrice }} &#8381;</div>
