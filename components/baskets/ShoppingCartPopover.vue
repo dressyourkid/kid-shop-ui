@@ -1,16 +1,20 @@
 <template>
     <v-menu
         :close-on-content-click="false"
+        max-height="350"
     >
         <v-btn
             slot="activator"
             flat
             small
         >
-            <v-icon>shopping_cart</v-icon>
+            <v-badge color="brown lighten-2" left>
+                <span slot="badge">{{ productCapacity }}</span>
+                <v-icon>shopping_cart</v-icon>
+            </v-badge>
             Корзина
         </v-btn>
-        <v-container grid-list-xs style="background: white;width:600px">
+        <v-container v-if="productsInCart.length" grid-list-xs style="background: white;width:600px">
             <v-layout row v-for="item in totalProducts" :key="item.product.id">
                 <v-flex>
                     <nuxt-link class="cart-link" :to="{ path: '/products/' + item.product.id }">
@@ -49,12 +53,22 @@
                 </v-flex>
             </v-layout>
             <v-divider/>
+            <v-layout column>
+                <v-flex>
+                    <div>Итого: {{ totalOrderPrice }} &#8381;</div>
+                </v-flex>
+                <v-flex>
+                    <v-btn block color="teal darken-1" dark>
+                        Оформить заказ
+                        <v-icon class="pl-3">arrow_forward</v-icon>
+                    </v-btn>
+                </v-flex>
+            </v-layout>
+        </v-container>
+        <v-container v-else style="background: white">
             <v-layout row>
                 <v-flex>
-                    <v-btn color="teal darken-1" dark>Оформить заказ</v-btn>
-                </v-flex>
-                <v-flex shrink >
-                    <div>Итого: {{ totalOrderPrice }} &#8381;</div>
+                    <div>Какое то завлекающее сообщение, которое сделает пиздато бог верстки</div>
                 </v-flex>
             </v-layout>
         </v-container>
