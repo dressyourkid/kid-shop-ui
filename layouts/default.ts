@@ -35,13 +35,9 @@ export default class DefaultLayout extends Vue {
         this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
         if (this.offsetTop > 20 ) {
             this.show = true 
-            
         }else{
             this.show = false  
         }  
-    }
-    
-
-    
+    }   
 }
 
