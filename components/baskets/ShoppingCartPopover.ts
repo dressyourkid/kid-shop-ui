@@ -28,10 +28,14 @@ export default class ShoppingCartPopover extends Vue {
     }
 
     private get totalOrderPrice() {
-        let gus: number = 0;
+        let sum: number = 0;
         this.totalProducts.forEach( item => {
-            gus += item.totalPrice;
+            sum += item.totalPrice;
         })
-        return gus;
+        return sum;
+    }
+
+    private get productCapacity() {
+        return this.productsInCart.length;
     }
 }
