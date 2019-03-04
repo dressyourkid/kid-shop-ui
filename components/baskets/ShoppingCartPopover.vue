@@ -2,7 +2,6 @@
     <v-menu 
         class="elevation-18 "
         :close-on-content-click="false"
-        style="top: 50px;"
     >
         <v-btn
             slot="activator"
