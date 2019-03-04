@@ -28,11 +28,11 @@ export default class ShoppingCartPopover extends Vue {
     }
 
     private get totalOrderPrice() {
-        let summ: number = 0;
+        let sum: number = 0;
         this.totalProducts.forEach( item => {
-            summ += item.totalPrice;
+            sum += item.totalPrice;
         })
-        return summ;
+        return sum;
     }
 
     private get productCapacity() {
