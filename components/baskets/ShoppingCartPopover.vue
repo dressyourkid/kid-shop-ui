@@ -84,7 +84,7 @@
                     <span class="green--text headline "> {{ totalOrderPrice }} &#8381;</span>
                 </v-flex>
                 <v-flex xs12>
-                    <v-btn block large  small color="teal darken-1" dark>
+                    <v-btn block large  :to="'/order/new/'"  small color="teal darken-1" dark>
                         Оформить заказ
                         <v-icon class="pl-3">arrow_forward</v-icon>
                     </v-btn>
