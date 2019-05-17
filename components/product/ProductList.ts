@@ -7,7 +7,7 @@ import Card from '~/components/product/Card.vue';
         Card
     }
 })
-export default class ProductList extends Vue {
+export default class ProductList extends Vue { 
     
     /**
      * Category id
@@ -19,6 +19,8 @@ export default class ProductList extends Vue {
     private currentPage: number = 1;
     private numberOfPages: number = null;
     private pageSize: number = 9; // todo make it configurable
+    private type: string = 'anchorUp';
+    private anchorUp: number = 1;
 
     @Watch('$route.query')
     private watchRoute(query, oldQuery) {
@@ -59,6 +61,15 @@ export default class ProductList extends Vue {
             }
         } catch (error) {
             console.error(error);
+        }
+    }
+
+    private get paginationUp () {
+        const value = this[this.type]
+        if (!isNaN(value)) {
+            return Number(value);
+        } else {
+            return value;
         }
     }
 }
