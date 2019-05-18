@@ -1,5 +1,6 @@
 <template>
     <v-menu 
+        v-model="basketMenu"
         class="elevation-18 "
         :close-on-content-click="false"
     >
@@ -20,13 +21,13 @@
             pr-1  
             v-if="productsInCart.length"  
             style="background: white;"
-            >
+        >
             <div class="overflow_in_baskets">
                 <v-layout 
                     row 
                     v-for="item in totalProducts" 
                     :key="item.product.id"
-                    >
+                >
                     <v-flex pl-2>
                         <nuxt-link class="cart-link" :to="{ path: '/products/' + item.product.id }">
                         <v-img style="width: 70px" src="http://picture-cdn.wheretoget.it/6d8ng3-l-610x610-t+shirt-kids+tee-kids+fas…anie-shirt-single-jacket-78-pull-black-swag-dope-white+t+shirt-flowers.jpg"/>
@@ -36,7 +37,7 @@
                         xs3 
                         md3 
                         lg3
-                        >
+                    >
                         <div>
                             <nuxt-link class="cart-link" :to="{ path: '/products/' + item.product.id }">
                             {{ item.product.name }}
@@ -52,7 +53,8 @@
                     <v-flex 
                         xs1 
                         md1 
-                        lg1>
+                        lg1
+                    >
                         <v-text-field v-model="item.amount" solo readonly/>
                     </v-flex>
                     <v-flex >
@@ -78,13 +80,13 @@
                 px-3 
                 py-2 
                 wrap 
-                >
+            >
                 <v-flex xs12 text-xs-right mb-3>
                     <span class="subheading font-weight-light grey--text">Итого: </span> 
                     <span class="green--text headline "> {{ totalOrderPrice }} &#8381;</span>
                 </v-flex>
                 <v-flex xs12>
-                    <v-btn block large  small color="teal darken-1" dark>
+                    <v-btn @click="basketMenu = false" block large  :to="'/order/new/'"  small color="teal darken-1" dark>
                         Оформить заказ
                         <v-icon class="pl-3">arrow_forward</v-icon>
                     </v-btn>
@@ -96,17 +98,17 @@
             pl-1 
             pr-1   
             v-else style="background: white"
-            >
+        >
             <v-layout 
                 layout 
                 align-center 
                 wrap
-                >
+            >
                 <v-flex 
                     xs12 
                     text-xs-center
                     mb-3
-                    > 
+                > 
                     <h2 class="pb-2">
                         <v-icon>shopping_cart</v-icon>
                         Корзина пуста 
@@ -115,7 +117,7 @@
                     <v-divider/>
                 </v-flex>
                 <v-flex xs12>
-                    <v-btn :to="'/products'" block large  small color="teal darken-1" dark>
+                    <v-btn @click="basketMenu = false" :to="'/products'" block large  small color="teal darken-1" dark>
                         Перейти к товарам
                         <v-icon class="pl-3">arrow_forward</v-icon>
                     </v-btn>
