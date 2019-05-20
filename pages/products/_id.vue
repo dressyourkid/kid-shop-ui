@@ -25,7 +25,7 @@
             >
                 <div>
                     <h1 class="headline"> {{ product.name }} </h1>
-                    <h1 class="green--text headline "><span class="subheading font-weight-light grey--text">Цена: </span>  {{ product.price }} &#8381;</h1>
+                    <h2 class="green--text headline "><span class="subheading font-weight-light grey--text">Цена: </span>  {{ product.price }} &#8381;</h2>
                     <v-select
                         :items="size"
                         label="Выберите размер"
