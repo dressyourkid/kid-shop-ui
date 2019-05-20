@@ -7,7 +7,7 @@ import Card from '~/components/product/Card.vue';
         Card
     }
 })
-export default class ProductList extends Vue {
+export default class ProductList extends Vue { 
     
     /**
      * Category id
@@ -61,4 +61,10 @@ export default class ProductList extends Vue {
             console.error(error);
         }
     }
+    
+    private async  onPageNumberChange(page: number)  {
+        this.fetchPageContent(page)
+        this.$vuetify.goTo(1)
+    }
+
 }

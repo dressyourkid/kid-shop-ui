@@ -12,13 +12,13 @@
             </v-flex>
         </v-layout>
         <v-layout justify-center align-center>
-            <v-pagination
-                :value="currentPage"
-                @input="fetchPageContent"
-                :length="numberOfPages"
-                :total-visible="5"
-            >
-            </v-pagination>
+                <v-pagination
+                    :value="currentPage"
+                    @input="onPageNumberChange"
+                    :length="numberOfPages"
+                    :total-visible="7"
+                >
+                </v-pagination>
         </v-layout>
     </div>
 </template>
