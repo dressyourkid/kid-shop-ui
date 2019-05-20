@@ -5,6 +5,7 @@ import { ProductInCart, Product } from "~/types";
 export default class ShoppingCartPopover extends Vue {
     @State
     private productsInCart: ProductInCart[];
+    private basketMenu: boolean = false;
 
     private get totalProducts(): any[] {
         return this.productsInCart.map( item => {
