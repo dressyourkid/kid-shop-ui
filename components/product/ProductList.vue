@@ -12,17 +12,13 @@
             </v-flex>
         </v-layout>
         <v-layout justify-center align-center>
-            <div 
-                @click="$vuetify.goTo(paginationUp)" 
-            >
                 <v-pagination
                     :value="currentPage"
-                    @input="fetchPageContent"
+                    @input="onPageNumberChange"
                     :length="numberOfPages"
                     :total-visible="7"
                 >
                 </v-pagination>
-            </div>
         </v-layout>
     </div>
 </template>

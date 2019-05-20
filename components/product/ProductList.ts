@@ -19,8 +19,6 @@ export default class ProductList extends Vue {
     private currentPage: number = 1;
     private numberOfPages: number = null;
     private pageSize: number = 9; // todo make it configurable
-    private type: string = 'anchorUp';
-    private anchorUp: number = 1;
 
     @Watch('$route.query')
     private watchRoute(query, oldQuery) {
@@ -63,13 +61,10 @@ export default class ProductList extends Vue {
             console.error(error);
         }
     }
-
-    private get paginationUp () {
-        const value = this[this.type]
-        if (!isNaN(value)) {
-            return Number(value);
-        } else {
-            return value;
-        }
+    
+    private async  onPageNumberChange(page: number)  {
+        this.fetchPageContent(page)
+        this.$vuetify.goTo(1)
     }
+
 }
