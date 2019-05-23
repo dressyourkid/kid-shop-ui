@@ -19,7 +19,7 @@
                             class="logo"
                             :to="'/'"
                         >
-                        Интернет магазин
+                            Интернет магазин
                         </nuxt-link>
                     </v-flex>
                     <v-flex>
@@ -89,7 +89,7 @@
                 <nuxt />
             </div>
         </div>
-        <v-btn @click="$vuetify.goTo(buttonUp)" v-if="show" fab dark fixed medium bottom floating right color="red"> 
+        <v-btn @click="$vuetify.goTo(1)" v-show="upShow" fab dark fixed medium bottom floating right color="red"> 
             <v-icon dark>keyboard_arrow_up</v-icon> 
         </v-btn>
     </v-app>
