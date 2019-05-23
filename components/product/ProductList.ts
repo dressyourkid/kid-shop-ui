@@ -7,7 +7,7 @@ import Card from '~/components/product/Card.vue';
         Card
     }
 })
-export default class ProductList extends Vue {
+export default class ProductList extends Vue { 
     
     /**
      * Category id
@@ -19,6 +19,7 @@ export default class ProductList extends Vue {
     private currentPage: number = 1;
     private numberOfPages: number = null;
     private pageSize: number = 9; // todo make it configurable
+    private loaded: boolean = false;
 
     @Watch('$route.query')
     private watchRoute(query, oldQuery) {
@@ -59,6 +60,14 @@ export default class ProductList extends Vue {
             }
         } catch (error) {
             console.error(error);
+        } finally {
+                this.loaded = true;
         }
     }
+    
+    private async  onPageNumberChange(page: number)  {
+        this.fetchPageContent(page)
+        this.$vuetify.goTo(1)
+    }
+    
 }

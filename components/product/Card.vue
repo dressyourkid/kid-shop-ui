@@ -18,6 +18,15 @@
             <v-card-text
                 style="position: relative;"
             >
+                <v-snackbar
+                    color="orange"
+                    :timeout="timeout"
+                    v-model="snackbar"
+                    >
+                    <h3>
+                        {{ itemAdded }}
+                    </h3>
+                </v-snackbar>
                 <v-btn
                     absolute
                     color="orange"
@@ -26,7 +35,7 @@
                     large
                     right
                     top
-                    @click="addToCart"
+                    @click=" addToCart"
                 >
                     <v-icon color="white">add</v-icon>
                 </v-btn>

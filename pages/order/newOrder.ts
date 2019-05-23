@@ -1,11 +1,12 @@
-import { Component,Vue, Prop, State } from "nuxt-property-decorator"
-import { ProductInCart, Product } from "~/types";
+import { Component,Vue, State } from "nuxt-property-decorator"
+import { ProductInCart, } from "~/types";
 
 @Component({})
-export default class ShoppingCartPopover extends Vue {
+export default class newOrder extends Vue {
     @State
     private productsInCart: ProductInCart[];
-    private basketMenu: boolean = false;
+    private phone: string = "+7 (978)";
+    private email: string = '';
 
     private get totalProducts(): any[] {
         return this.productsInCart.map( item => {
@@ -16,18 +17,10 @@ export default class ShoppingCartPopover extends Vue {
         })
     }
 
-    private decreaseAmount(item: Product) {
-        this.$store.commit('decreaseProductAmount', item);
-    }
-
-    private increaseAmount(item: number) {
-        this.$store.commit('increaseProductAmount', item);
-    }
-
     private deleteProduct(item: ProductInCart) {
         this.$store.commit('removeProduct', item);
     }
-
+    
     private get totalOrderPrice() {
         let sum: number = 0;
         this.totalProducts.forEach( item => {
@@ -36,7 +29,12 @@ export default class ShoppingCartPopover extends Vue {
         return sum;
     }
 
-    private get productCapacity() {
-        return this.productsInCart.length;
+    private get rules(): any {
+        return {
+            email: (value) => {
+                const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                return pattern.test(value) || 'Invalid e-mail.';
+            },
+        }
     }
 }

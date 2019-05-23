@@ -29,7 +29,7 @@
                             v-model="productSearch"
                             clearable
                             flat
-                            label="Search"
+                            label="Поиск"
                             solo-inverted
                             @keyup.enter="search"
                         >
