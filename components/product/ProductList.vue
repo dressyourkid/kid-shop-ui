@@ -38,9 +38,9 @@
                 xs12 
                 sm6
                 md4  
-                class="green--text" 
+                class="secondary--text" 
             >
-                <h2  class="pt-5">В данный момент товары отсутствуют.</h2>
+                <h2 class="pt-5">В данный момент товары отсутствуют.</h2>
                 <p>Приносим свои извинения.</p>
             </v-flex>
         </v-layout>

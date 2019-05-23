@@ -12,12 +12,19 @@ import { Category } from '~/types';
 export default class DefaultLayout extends Vue {
     private productSearch: string = '';
     private openDialog: boolean = false;
-
+    private offsetTop: number = 0;
+    private backToTopVisible: boolean = false;
+    
     @State
     private categories: Category[];
 
     private search() {
         this.$router.push({ path: '/products', query: { search: this.productSearch } })
     }
+
+    private onScroll() {   
+        this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+        this.backToTopVisible = this.offsetTop > 400;
+    }   
 }
 
