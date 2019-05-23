@@ -61,7 +61,7 @@ export default class ProductList extends Vue {
         } catch (error) {
             console.error(error);
         } finally {
-                this.loaded = true
+                this.loaded = true;
         }
     }
     
