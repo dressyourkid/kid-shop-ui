@@ -13,7 +13,7 @@ export default class DefaultLayout extends Vue {
     private productSearch: string = '';
     private openDialog: boolean = false;
     private offsetTop: number = 0;
-    private upShow: boolean = false;
+    private backToTopVisible: boolean = false;
     
     @State
     private categories: Category[];
@@ -21,13 +21,10 @@ export default class DefaultLayout extends Vue {
     private search() {
         this.$router.push({ path: '/products', query: { search: this.productSearch } })
     }
+
     private onScroll() {   
         this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
-        if (this.offsetTop > 20 ) {
-            this.upShow = true 
-        }else{
-            this.upShow = false  
-        }  
+        this.backToTopVisible = this.offsetTop > 400;
     }   
 }
 
